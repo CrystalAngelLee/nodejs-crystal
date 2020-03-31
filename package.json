@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-crystal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://CrystalAngelLee@github.com/CrystalAngelLee/nodejs-crystal.git",
+  "author": "CrystalAngelLee <crystaljiaxuan@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cpu-stat": "^2.0.1"
+  }
+}
