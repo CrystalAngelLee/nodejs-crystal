@@ -1,5 +1,20 @@
 const Koa = require('koa')
 const app = new Koa()
+const mongoose = require("./models/mongoose");
+const getVip = require("./middleware/getVip")
+
+/********  Session  *********/
+const session = require('koa-session');
+app.keys = ['some secrect']
+
+const SESSION_CONDIG = {
+    key: 'crystal: session'
+}
+
+app.use(session(SESSION_CONDIG, app))
+
+const bodyParser = require('koa-bodyparser')
+app.use(bodyParser())
 
 /********  KOA 的时间处理  *********/
 
@@ -49,8 +64,7 @@ app.use(async (ctx, next) => {
 });
 
 /********  Demo  *********/
-const mongoose = require("./models/mongoose");
-const getVip = require("./middleware/getVip")
+
 app.use(getVip)
 
 /********  KOA 静态文件服务  *********/
